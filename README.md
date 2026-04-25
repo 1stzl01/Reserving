@@ -1,15 +1,17 @@
 # Stochastic Claims Reserving – Implementations
 
-Illustrative Python implementations of two stochastic reserving methods for non-life insurance.
+Python implementations of two stochastic reserving methods for non-life insurance, covering both micro-level (individual claim) and aggregate modelling approaches.
 
 ## Notebooks
 
 **ICR_Model.ipynb** – Individual Claim Reserving (micro-level).  
-Simulates each open claim forward through a 4-state event model (closure with/without payment, intermediate payment, empty event).  
+Simulates open claims using a 4-state event model (closure with/without payment, intermediate payment, no-event), with stochastic severity modelling.  
 Based on Chalnot, Gremillet & Miehe (2015) and Descamps (2017).
 
-**Christofides_Verrall_Zhi.ipynb** – Log-incremental regression (aggregate). OLS on log-payments with full covariance accounting for the total reserve standard error, plus the Verrall–Li (1994) MLE extension for negative increments. Christofides (1990) 4x4 example.
+**Christofides_Verrall_Zhi.ipynb** – Aggregate reserving via log-incremental regression.  
+Implements OLS on log-payments with full covariance estimation of reserve uncertainty, including the Verrall–Li (1994) MLE extension for negative increments.  
+Based on Christofides (1990).
 
 ## Scope
 
-These are study implementations focused on the core methodology, not production reserving code. Tail factors, multi-line modelling, and some methodological extensions are out of scope.
+These are study implementations focused on core reserving methodology rather than production systems. Tail factors, multi-line modelling, and additional extensions are not included.
